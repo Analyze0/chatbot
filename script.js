@@ -133,6 +133,16 @@ document.body.onkeydown = function(e) {
         outputValue = "Chicken butt";
       } else if (/skibidi toilet/ig.test(inputValue)) {
         outputValue = "What??";
+      } else if (/your bday/ig.test(inputValue) || /ur bday/ig.test(inputValue) || /your birthday/ig.test(inputValue) || /ur birthday/ig.test(inputValue)) {
+        outputValue = "1/3/2010 why";
+      } else if (/marry me/ig.test(inputValue) || /get married/ig.test(inputValue)) {
+        outputValue = "No thanks lol";
+      } else if (/crush/ig.test(inputValue) || /crush on/ig.test(inputValue)) {
+        outputValue = "I don't care";
+      } else if (/you like anyone/ig.test(inputValue) || /u like anyone/ig.test(inputValue)) {
+        outputValue = "Nope";
+      } else if (/you a sigma/ig.test(inputValue) || /u a sigma/ig.test(inputValue) || /u the alpha/ig.test(inputValue) || /you the alpha/ig.test(inputValue)) {
+        outputValue = "Yk I am";
       }
       else {
         outputValue = errors[Math.floor(Math.random() * errors.length)];
