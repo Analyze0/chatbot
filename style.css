@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap');
+
+html {
+  height: calc(100% - 50px);
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input-outline {
+  border-radius: 20px;
+  width: calc(100% - 80px);
+  height: 35px;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  bottom: 10px;
+  left: 60px;
+  background: white;
+  border: 1.5px solid #e6e6e6;
+}
+
+.input {
+  caret-color: #0b7ed0;
+  width: calc(100% - 80px);
+  height: 35px;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  position: fixed;
+  bottom: 10px;
+  left: 70px;
+  background: none;
+  border: none;
+}
+
+.input::placeholder {
+  color: #d1d1d1;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.upload {
+  cursor: pointer;
+  user-select: none;
+  font-size: 30px;
+  border: none;
+  background: #e6e6e6;
+  color: gray;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.output {
+  overflow: scroll;
+  margin-top: 75px;
+  height: calc(100vh - 135px);
+  overflow-x: hidden;
+}
+
+.message {
+  margin-right: 10px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  max-width: 280px;
+  background: #0685e0;
+  padding: 7px;
+  font-size: 16px;
+  color: white;
+  border-radius: 17px;
+  float: right;
+}
+
+.message::before {
+  position: absolute;
+  bottom: 0px;
+  right: -7px;
+  background: #0685e0;
+  width: 15px;
+  height: 17px;
+  border-bottom-left-radius: 10px;
+  content: " ";
+}
+
+.message::after {
+  position: absolute;
+  bottom: 0px;
+  right: -15px;
+  background: white;
+  width: 15px;
+  height: 17px;
+  border-bottom-left-radius: 10px;
+  content: " ";
+}
+
+.message-bot {
+  margin-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  max-width: 280px;
+  background: #e6e6e6;
+  color: black;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 17px;
+  float: left;
+}
+
+.message-bot::before {
+  position: absolute;
+  bottom: 0px;
+  left: -7px;
+  background: #e6e6e6;
+  width: 15px;
+  height: 17px;
+  border-bottom-right-radius: 10px;
+  content: " ";
+}
+
+.message-bot::after {
+  position: absolute;
+  bottom: 0px;
+  left: -15px;
+  background: white;
+  width: 15px;
+  height: 17px;
+  border-bottom-right-radius: 10px;
+  content: " ";
+}
+
+.back-arrow {
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  position: fixed;
+  top: 25px;
+  left: 10px;
+  font-size: 20px;
+  color: #0b7ed0;
+}
+
+.top-overlay {
+  position: fixed;
+  height: 75px;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background: #f5f5f5;
+  border-bottom: 2px solid #e6e6e6;
+}
+
+.bot-name {
+  cursor: pointer;
+  user-select: none;
+  font-size: 12px;
+  position: absolute;
+  top: 55px;
+  left: calc(50% + 5px);
+  transform: translateX(-50%);
+}
+
+.bot-name .arrow {
+  cursor: pointer;
+  user-select: none;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: #cccccc;
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.bot-pfp {
+  cursor: pointer;
+  user-select: none;
+  border-radius: 50%;
+  position: absolute;
+  background: rgb(129,129,150);
+  background: linear-gradient(0deg, rgba(129,129,150,1) 0%, rgba(159,159,186,1) 100%);
+  width: 40px;
+  height: 40px;
+  top: 13px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bot-pfp .text {
+  cursor: pointer;
+  user-select: none;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+}
+
+img {
+  border-radius: 12px;
+}
+
+.message-loading {
+  cursor: default;
+  user-select: none;
+  font-size: 90px;
+  text-align: center;
+  display: flex;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  width: 50px;
+  height: 25px;
+  background: #e6e6e6;
+  padding: 7px;
+  color: black;
+  border-radius: 25px;
+  float: left;
+  margin-left: 10px;
+  animation: message-loading 2s ease-in-out infinite;
+}
+
+.message-loading .dot {
+  margin: -4px;
+  transform: translateY(-66px) translateX(7px);
+}
+
+.message-loading::before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: -9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  animation: message-loading 1s ease-in-out infinite;
+}
+
+.message-loading::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: -5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  animation: message-loading 1s ease-in-out infinite;
+}
+
+.dot-one {
+  animation: dot-one 1s ease-in-out infinite;
+}
+
+.dot-two {
+  animation: dot-two 1s ease-in-out infinite;
+}
+
+.dot-three {
+  animation: dot-three 1s ease-in-out infinite;
+}
+
+@keyframes dot-one {
+  0% {
+    color: #dedede;
+  }
+  25% {
+    color: #404040;
+  }
+  100% {
+    color: #dedede;
+  }
+}
+
+@keyframes dot-two {
+  0% {
+    color: #dedede;
+  }
+  50% {
+    color: #404040;
+  }
+  100% {
+    color: #dedede;
+  }
+}
+
+@keyframes dot-three {
+  0% {
+    color: #dedede;
+  }
+  75% {
+    color: #404040;
+  }
+  100% {
+    color: #dedede;
+  }
+}
+
+@keyframes message-loading {
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: black;
+  }
+  
+  .input-outline {
+    border-color: #1a1a1a;
+    background: black;
+  }
+
+  .input {
+    color: white;
+  }
+
+  .input::placeholder {
+    color: #1a1a1a;
+  }
+
+  .top-overlay {
+    border-bottom-color: #080808;
+    background: #1a1a1a;
+  }
+
+  .bot-name {
+    color: white;
+  }
+
+  .bot-name .arrow {
+    color: #4f4f4f;
+  }
+
+  .message-bot {
+    background: #1a1a1a;
+    color: white;
+  }
+
+  .message-bot::before {
+    background: #1a1a1a;
+  }
+
+  .message::after {
+    background: black;
+  }
+
+  .message-bot::after {
+    background: black;
+  }
+
+  .upload {
+    background: #1a1a1a;
+  }
+
+  .message-loading, .message-loading::before, .message-loading::after {
+    background: #1a1a1a;
+  }
+}
