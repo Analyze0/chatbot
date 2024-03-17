@@ -42,6 +42,7 @@ html {
 }
 
 .upload {
+  text-align: center;
   cursor: pointer;
   user-select: none;
   font-size: 30px;
@@ -361,5 +362,14 @@ img {
 
   .message-loading, .message-loading::before, .message-loading::after {
     background: #1a1a1a;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  .input {
+    bottom: 7.5px;
+  }
+  .back-arrow {
+    top: 21px;
   }
 }

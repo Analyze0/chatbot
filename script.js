@@ -4,8 +4,9 @@ let inputValue;
 let outputValue;
 
 let date = new Date();
+let sentSound = new Audio("files/audio/sent.mp3");
 
-let names = ["Anna", "Amelia", "Scarlett", "Chloe", "Harper", "Emma", "Ava", "Sophia", "Isabella", "Mia", "Lindsay", "Elizabeth", "Grace", "Madison", "Charlette", "Ella"];
+let names = ["Anna", "Amelia", "Scarlett", "Chloe", "Harper", "Emma", "Ava", "Sophia", "Isabella", "Mia", "Lindsay", "Elizabeth", "Grace", "Madison", "Charlotte", "Ella"];
 let botname = names[Math.floor(Math.random() * names.length)];
 document.getElementById('bot-name').innerHTML = botname + " <span class='arrow'>></span>";
 document.getElementById('bot-pfp-text').innerText = botname.charAt(0).toUpperCase();
@@ -32,6 +33,7 @@ document.body.onkeydown = function(e) {
       inputValue = inputDiv.value;
       inputDiv.value = "";
       if(inputValue.length > 0) {
+        sentSound.play();
   
       if (/hello/ig.test(inputValue) || /hi/ig.test(inputValue) || /hey/ig.test(inputValue) || /hola/ig.test(inputValue) || /bonjour/ig.test(inputValue) || /ciao/ig.test(inputValue) || /sup/ig.test(inputValue) || /gm/ig.test(inputValue) || /good morning/ig.test(inputValue)) {
         outputValue = greetings[Math.floor(Math.random() * greetings.length)];
